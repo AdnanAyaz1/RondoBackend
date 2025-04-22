@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-var logger = require('../lib/logger');
+var logger = require('../../lib/logger');
 var log = logger();
 
-var items = require('../init_data.json').data;
+var items = require('../../init_data.json').data;
 var curId = _.size(items);
 
 /* GET items listing. */
