@@ -8,15 +8,9 @@ var logger = require("./lib/logger");
 var cors = require("cors");
 
 var items = require("./routes/items");
-
 var app = express();
 var log = logger(app);
-app.use(
-  cors({
-    origin: "http://localhost:3001",
-    credentials: true, // if you're sending cookies
-  })
-);
+app.use(cors());
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -52,3 +46,5 @@ var server = app.listen(app.get("port"), function () {
     server.address().port
   );
 });
+
+export default app;
